@@ -1,0 +1,461 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #6c757d; /* Gris oscuro */
+    --accent-color: #28a745; /* Verde para éxito/funcional */
+    --background-light: #f8f9fa; /* Fondo muy claro */
+    --background-dark: #343a40; /* Fondo oscuro para header/footer */
+    --text-color: #343a40; /* Texto principal */
+    --card-background: #ffffff; /* Fondo de tarjetas */
+    --border-color: #e9ecef; /* Color de borde suave */
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background: var(--background-light);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+}
+
+/* Header Section */
+header {
+    background: var(--background-dark);
+    color: #fff;
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Para contener cualquier efecto de fondo */
+    box-shadow: 0 4px 10px var(--shadow-medium);
+}
+
+.header-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 25px;
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre cualquier fondo */
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.2); /* Anillo suave alrededor */
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header .subtitle {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.contact-info {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.contact-link i {
+    margin-right: 8px;
+    font-size: 1.3em;
+}
+
+.contact-link:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.location {
+    font-size: 1rem;
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+.social-links {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Main Content Sections */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 25px;
+}
+
+.section {
+    background: var(--card-background);
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    transition: transform 0.3s ease-in-out;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+.section h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 25px;
+    background: var(--card-background);
+    box-shadow: 0 3px 8px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px var(--shadow-medium);
+}
+
+.project-card h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.project-card .project-type {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.project-card .technologies {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.project-card p {
+    margin-bottom: 15px;
+}
+
+.project-card strong {
+    color: var(--primary-color);
+}
+
+.project-card .status {
+    color: var(--accent-color); /* Green for functional */
+    font-weight: 700;
+    margin-top: 15px;
+    display: inline-block; /* Para que tome el color completo */
+    padding: 5px 10px;
+    background-color: rgba(40, 167, 69, 0.1); /* Fondo suave */
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.project-card .status.incomplete {
+    color: #ffc107; /* Yellow for in progress */
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-card .project-link {
+    display: inline-flex; /* Para alinear el ícono */
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.project-card .project-link:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+
+.project-link i {
+    margin-left: 8px;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.skill-tag {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+.skill-tag:hover {
+    background: #0056b3;
+    transform: translateY(-3px) scale(1.02);
+}
+
+.skill-tag i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Experience and Education Sections */
+.job-card, .education-item {
+    background: var(--card-background);
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    border-left: 5px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.job-card:hover, .education-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px var(--shadow-medium);
+}
+
+.job-card h3, .education-item h3 {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.job-card .company, .education-item .institution {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.job-card .dates {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.job-card ul {
+    list-style: none; /* Quitamos el estilo de lista por defecto */
+    padding: 0;
+    margin: 0;
+}
+
+.job-card li {
+    position: relative;
+    padding-left: 25px; /* Espacio para el bullet personalizado */
+    margin-bottom: 8px;
+}
+
+.job-card li::before {
+    content: '\2022'; /* Unicode para un punto gordo */
+    color: var(--primary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em; /* Ajusta el tamaño del bullet */
+    margin-left: -1.5em; /* Mueve el bullet a la izquierda */
+    position: absolute;
+    left: 0;
+}
+
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--background-dark);
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 40px;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    header .subtitle {
+        font-size: 1.2rem;
+    }
+    .profile-pic {
+        width: 140px;
+        height: 140px;
+    }
+    .contact-info {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .contact-link {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+    main {
+        padding: 0 15px;
+    }
+    .section {
+        padding: 30px 20px;
+    }
+    .section h2 {
+        font-size: 2rem;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-card {
+        padding: 20px;
+    }
+    .project-card h3 {
+        font-size: 1.6rem;
+    }
+    .skill-tag {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    .job-card h3, .education-item h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    header .subtitle {
+        font-size: 1rem;
+    }
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    .contact-link {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+    .location {
+        font-size: 0.85rem;
+    }
+    .social-icon {
+        font-size: 1.8rem;
+    }
+    .section h2 {
+        font-size: 1.8rem;
+    }
+    .project-card h3 {
+        font-size: 1.4rem;
+    }
+    .skill-tag {
+        font-size: 0.85rem;
+        padding: 7px 12px;
+    }
+}
